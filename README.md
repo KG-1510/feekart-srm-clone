@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+<div align="center">
+  <img alt="srm-logo" src="https://vectorlogoseek.com/wp-content/uploads/2019/03/srm-institute-of-science-and-technology-vector-logo.png" height="56" />
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">
+SRM Feekart Clone 💵
+</h1>
 
-## Available Scripts
+<p align="center">
+crafted with <span style="color: #8b0000;">&hearts;</span> by Kushagra Gupta
+</p>
 
-In the project directory, you can run:
+<h2 align="center">Built using: </h2>
+<p align="center">
+    <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+    <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
+    <img src="https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" />
+</p>
 
-### `yarn start`
+## View Deployed Site 🚀
+<p>Click https://srm-feekart.netlify.app to view the deployed site</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Preview 📺
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<div align="center">
+  <img alt="login-page" src="https://user-images.githubusercontent.com/60519359/153770399-5197c479-d9e9-4f56-9836-c1f7582fd1da.png" />
+</div>
+<br>
+<div align="center">
+  <img alt="home-page" src="https://user-images.githubusercontent.com/60519359/153770427-b94ba771-c34b-40d3-aebd-00836dc2116a.png" />
+</div>
 
-### `yarn test`
+## Installation 🔧
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Install dependencies
 
-### `yarn build`
+```
+$ yarn
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Start the server
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+$ yarn start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Build the app
 
-### `yarn eject`
+```
+$ yarn build
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Contributing 🤝
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Please read `Contributing.md` for details on our code of conduct, and the process for submitting pull requests to us.

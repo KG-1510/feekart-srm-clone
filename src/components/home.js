@@ -3,6 +3,8 @@
 
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { pendingTransactionsData } from "../utils/dummy/pendingTransactions";
+import { latestTransactionsData } from "../utils/dummy/latestTransactions";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 export default function Home() {
@@ -161,7 +163,7 @@ export default function Home() {
                             type="text"
                             name="email"
                             id="mobile-search"
-                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-600 focus:ring-cyan-600 block w-full pl-10 p-2.5"
+                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-600 block w-full pl-10 p-2.5"
                             placeholder="Search"
                           />
                         </div>
@@ -295,7 +297,7 @@ export default function Home() {
                           type="text"
                           name="email"
                           id="mobile-search"
-                          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-600 focus:ring-cyan-600 block w-full pl-10 p-2.5"
+                          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-600 block w-full pl-10 p-2.5"
                           placeholder="Search"
                         />
                       </div>
@@ -468,100 +470,51 @@ export default function Home() {
                               </tr>
                             </thead>
                             <tbody className="bg-white">
-                              <tr>
-                                <td className="p-4 whitespace-nowrap text-sm font-normal text-gray-900">
-                                  Payment from{" "}
-                                  <span className="font-semibold">
-                                    Bonnie Green
-                                  </span>
-                                </td>
-                                <td className="p-4 whitespace-nowrap text-sm font-normal text-gray-500">
-                                  Apr 23 ,2021
-                                </td>
-                                <td className="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
-                                  $2300
-                                </td>
-                              </tr>
-                              <tr className="bg-gray-50">
-                                <td className="p-4 whitespace-nowrap text-sm font-normal text-gray-900 rounded-lg rounded-left">
-                                  Payment refund to{" "}
-                                  <span className="font-semibold">#00910</span>
-                                </td>
-                                <td className="p-4 whitespace-nowrap text-sm font-normal text-gray-500">
-                                  Apr 23 ,2021
-                                </td>
-                                <td className="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
-                                  -$670
-                                </td>
-                              </tr>
-                              <tr>
-                                <td className="p-4 whitespace-nowrap text-sm font-normal text-gray-900">
-                                  Payment failed from{" "}
-                                  <span className="font-semibold">#087651</span>
-                                </td>
-                                <td className="p-4 whitespace-nowrap text-sm font-normal text-gray-500">
-                                  Apr 18 ,2021
-                                </td>
-                                <td className="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
-                                  $234
-                                </td>
-                              </tr>
-                              <tr className="bg-gray-50">
-                                <td className="p-4 whitespace-nowrap text-sm font-normal text-gray-900 rounded-lg rounded-left">
-                                  Payment from{" "}
-                                  <span className="font-semibold">
-                                    Lana Byrd
-                                  </span>
-                                </td>
-                                <td className="p-4 whitespace-nowrap text-sm font-normal text-gray-500">
-                                  Apr 15 ,2021
-                                </td>
-                                <td className="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
-                                  $5000
-                                </td>
-                              </tr>
-                              <tr>
-                                <td className="p-4 whitespace-nowrap text-sm font-normal text-gray-900">
-                                  Payment from{" "}
-                                  <span className="font-semibold">
-                                    Jese Leos
-                                  </span>
-                                </td>
-                                <td className="p-4 whitespace-nowrap text-sm font-normal text-gray-500">
-                                  Apr 15 ,2021
-                                </td>
-                                <td className="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
-                                  $2300
-                                </td>
-                              </tr>
-                              <tr className="bg-gray-50">
-                                <td className="p-4 whitespace-nowrap text-sm font-normal text-gray-900 rounded-lg rounded-left">
-                                  Payment from{" "}
-                                  <span className="font-semibold">
-                                    THEMESBERG LLC
-                                  </span>
-                                </td>
-                                <td className="p-4 whitespace-nowrap text-sm font-normal text-gray-500">
-                                  Apr 11 ,2021
-                                </td>
-                                <td className="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
-                                  $560
-                                </td>
-                              </tr>
-                              <tr>
-                                <td className="p-4 whitespace-nowrap text-sm font-normal text-gray-900">
-                                  Payment from{" "}
-                                  <span className="font-semibold">
-                                    Lana Lysle
-                                  </span>
-                                </td>
-                                <td className="p-4 whitespace-nowrap text-sm font-normal text-gray-500">
-                                  Apr 6 ,2021
-                                </td>
-                                <td className="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
-                                  $1437
-                                </td>
-                              </tr>
+                              {pendingTransactionsData.map((item) => {
+                                return (
+                                  <tr>
+                                    <td className="p-4 whitespace-nowrap text-sm font-normal text-gray-900">
+                                      {item.transaction}
+                                    </td>
+                                    <td className="p-4 whitespace-nowrap text-sm font-normal text-gray-500">
+                                      {item.due_date}
+                                    </td>
+                                    <td className="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
+                                      {item.amount}
+                                    </td>
+                                    <td className="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
+                                      {item.status === "pending" ? (
+                                        <span className="text-yellow-600 p-1 rounded-full bg-yellow-100">
+                                          Pending
+                                        </span>
+                                      ) : item.status === "paid" ? (
+                                        <span className="text-green-600 p-1 rounded-full bg-green-100">
+                                          Paid
+                                        </span>
+                                      ) : (
+                                        <span className="text-red-600 p-1 rounded-full bg-red-100">
+                                          Overdue
+                                        </span>
+                                      )}
+                                    </td>
+                                    <td className="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
+                                      {item.status === "pending" ? (
+                                        <button className="bg-green-500 text-white font-semibold p-2 rounded-md">
+                                          Pay Now
+                                        </button>
+                                      ) : item.status === "paid" ? (
+                                        <span className="text-green-600 px-2 py-1 rounded-full bg-green-100">
+                                          ✅ Paid
+                                        </span>
+                                      ) : (
+                                        <button className="bg-yellow-500 text-white font-semibold p-2 rounded-md">
+                                          Pay with Penalty
+                                        </button>
+                                      )}
+                                    </td>
+                                  </tr>
+                                );
+                              })}
                             </tbody>
                           </table>
                         </div>
@@ -605,7 +558,7 @@ export default function Home() {
                                   scope="col"
                                   className="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                                 >
-                                  Date &amp; Time
+                                  Paid On
                                 </th>
                                 <th
                                   scope="col"
@@ -613,103 +566,35 @@ export default function Home() {
                                 >
                                   Amount
                                 </th>
+                                <th
+                                  scope="col"
+                                  className="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                >
+                                  Action
+                                </th>
                               </tr>
                             </thead>
                             <tbody className="bg-white">
-                              <tr>
-                                <td className="p-4 whitespace-nowrap text-sm font-normal text-gray-900">
-                                  Payment from{" "}
-                                  <span className="font-semibold">
-                                    Bonnie Green
-                                  </span>
-                                </td>
-                                <td className="p-4 whitespace-nowrap text-sm font-normal text-gray-500">
-                                  Apr 23 ,2021
-                                </td>
-                                <td className="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
-                                  $2300
-                                </td>
-                              </tr>
-                              <tr className="bg-gray-50">
-                                <td className="p-4 whitespace-nowrap text-sm font-normal text-gray-900 rounded-lg rounded-left">
-                                  Payment refund to{" "}
-                                  <span className="font-semibold">#00910</span>
-                                </td>
-                                <td className="p-4 whitespace-nowrap text-sm font-normal text-gray-500">
-                                  Apr 23 ,2021
-                                </td>
-                                <td className="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
-                                  -$670
-                                </td>
-                              </tr>
-                              <tr>
-                                <td className="p-4 whitespace-nowrap text-sm font-normal text-gray-900">
-                                  Payment failed from{" "}
-                                  <span className="font-semibold">#087651</span>
-                                </td>
-                                <td className="p-4 whitespace-nowrap text-sm font-normal text-gray-500">
-                                  Apr 18 ,2021
-                                </td>
-                                <td className="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
-                                  $234
-                                </td>
-                              </tr>
-                              <tr className="bg-gray-50">
-                                <td className="p-4 whitespace-nowrap text-sm font-normal text-gray-900 rounded-lg rounded-left">
-                                  Payment from{" "}
-                                  <span className="font-semibold">
-                                    Lana Byrd
-                                  </span>
-                                </td>
-                                <td className="p-4 whitespace-nowrap text-sm font-normal text-gray-500">
-                                  Apr 15 ,2021
-                                </td>
-                                <td className="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
-                                  $5000
-                                </td>
-                              </tr>
-                              <tr>
-                                <td className="p-4 whitespace-nowrap text-sm font-normal text-gray-900">
-                                  Payment from{" "}
-                                  <span className="font-semibold">
-                                    Jese Leos
-                                  </span>
-                                </td>
-                                <td className="p-4 whitespace-nowrap text-sm font-normal text-gray-500">
-                                  Apr 15 ,2021
-                                </td>
-                                <td className="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
-                                  $2300
-                                </td>
-                              </tr>
-                              <tr className="bg-gray-50">
-                                <td className="p-4 whitespace-nowrap text-sm font-normal text-gray-900 rounded-lg rounded-left">
-                                  Payment from{" "}
-                                  <span className="font-semibold">
-                                    THEMESBERG LLC
-                                  </span>
-                                </td>
-                                <td className="p-4 whitespace-nowrap text-sm font-normal text-gray-500">
-                                  Apr 11 ,2021
-                                </td>
-                                <td className="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
-                                  $560
-                                </td>
-                              </tr>
-                              <tr>
-                                <td className="p-4 whitespace-nowrap text-sm font-normal text-gray-900">
-                                  Payment from{" "}
-                                  <span className="font-semibold">
-                                    Lana Lysle
-                                  </span>
-                                </td>
-                                <td className="p-4 whitespace-nowrap text-sm font-normal text-gray-500">
-                                  Apr 6 ,2021
-                                </td>
-                                <td className="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
-                                  $1437
-                                </td>
-                              </tr>
+                              {latestTransactionsData.map((item) => {
+                                return (
+                                  <tr>
+                                    <td className="p-4 whitespace-nowrap text-sm font-normal text-gray-900">
+                                      {item.transaction}
+                                    </td>
+                                    <td className="p-4 whitespace-nowrap text-sm font-normal text-gray-500">
+                                      {item.paid_on}
+                                    </td>
+                                    <td className="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
+                                      {item.amount}
+                                    </td>
+                                    <td className="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
+                                      <button className="bg-green-500 text-white font-semibold p-2 rounded-md">
+                                        View Details
+                                      </button>
+                                    </td>
+                                  </tr>
+                                );
+                              })}
                             </tbody>
                           </table>
                         </div>
